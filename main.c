@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	bytes_read = getline(&file_content, &getline_size, monty_file);
+	bytes_read = get_line(&file_content, &getline_size, monty_file);
 	while (bytes_read != -1)
 	{
 		monty_object.file_content = file_content;

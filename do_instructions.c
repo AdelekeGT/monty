@@ -14,7 +14,9 @@ void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file)
 	char line_no_str[10];
 
 	instruction_t struct_arr[] = {
-		{"push", do_push}, {"pall", do_pall}, {NULL, NULL}
+		{"push", do_push}, {"pall", do_pall}, {"pint", do_pint},
+		{"pop", do_pop}, {"swap", do_swap}, {"add", do_add},
+		{"nop", do_nop}, {NULL, NULL}
 	};
 
 	token = strtok(content, MONTY_DELIM);

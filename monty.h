@@ -82,5 +82,11 @@ void do_join_queue(stack_t **n_head, int data);
 
 void do_push(stack_t **n_head, unsigned int line_number);
 void do_pall(stack_t **n_head, unsigned int line_number);
+void do_pint(stack_t **n_head, unsigned int line_number);
+void do_pop(stack_t **n_head, unsigned int line_number);
+void all_free(FILE *the_file, char *file_content, stack_t **the_stack);
+void do_swap(stack_t **n_head, unsigned int line_number);
+void do_add(stack_t **n_head, unsigned int line_number);
+void do_nop(stack_t **n_head, unsigned int line_number);
 
 #endif /* MONTY_H */
