@@ -39,7 +39,7 @@ void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file)
 		_error_write("\n");
 		fclose(m_file);
 		free(content);
-		stack_freer(&(*h));
+		stack_freer(h);
 		exit(EXIT_FAILURE);
 	}
 }

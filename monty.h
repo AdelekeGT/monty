@@ -37,14 +37,14 @@ typedef struct stack_s
  * struct MontyData - data for command passed in to be executed
  * @m_file: monty file opened using fopen()
  * @file_content: content of opened file
- * @line_num: line number
+ * @st_switch: change from stack to queue
  * @argu: arguments
 */
 typedef struct MontyData
 {
 	FILE *m_file;
 	char *file_content;
-	int line_num;
+	int st_switch;
 	char *argu;
 } MontyPack;
 
@@ -77,7 +77,10 @@ ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
 void bring_line(char **lineptr, size_t *n, char *buffer, size_t j);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
-void do_push(stack_t **stack, unsigned int line_number);
-void do_pall(stack_t **stack, unsigned int line_number);
+void do_add_node(stack_t **n_head, int data);
+void do_join_queue(stack_t **n_head, int data);
+
+void do_push(stack_t **n_head, unsigned int line_number);
+void do_pall(stack_t **n_head, unsigned int line_number);
 
 #endif /* MONTY_H */

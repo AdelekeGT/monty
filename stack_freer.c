@@ -16,7 +16,7 @@ void stack_freer(stack_t **h)
 
 	temp = *h;
 
-	while (temp != NULL)
+	while (*h != NULL)
 	{
 		*h = (*h)->next;
 		free(temp);
