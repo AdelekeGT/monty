@@ -20,7 +20,7 @@ void do_add(stack_t **n_head, unsigned int line_number)
 
 	if (stack_length <= 1)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		do_print_error(4, line_number);
 		all_free(monty_object.m_file, monty_object.file_content, n_head);
 		exit(EXIT_FAILURE);
 	}

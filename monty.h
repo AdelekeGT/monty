@@ -77,6 +77,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void do_add_node(stack_t **n_head, int data);
 void do_join_queue(stack_t **n_head, int data);
 
+void do_print_error(int error_num, unsigned int line_num);
+
 void do_push(stack_t **n_head, unsigned int line_number);
 void do_pall(stack_t **n_head, unsigned int line_number);
 void do_pint(stack_t **n_head, unsigned int line_number);

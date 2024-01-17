@@ -11,7 +11,7 @@ void do_pop(stack_t **n_head, unsigned int line_number)
 
 	if (*n_head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		do_print_error(2, line_number);
 		all_free(monty_object.m_file, monty_object.file_content, n_head);
 		exit(EXIT_FAILURE);
 	}

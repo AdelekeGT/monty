@@ -11,7 +11,6 @@ void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file)
 {
 	char *token;
 	int iterator = 0;
-	char line_no_str[10];
 
 	instruction_t struct_arr[] = {
 		{"push", do_push}, {"pall", do_pall}, {"pint", do_pint},
@@ -33,15 +32,8 @@ void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file)
 
 	if (token != NULL && struct_arr[iterator].opcode == NULL)
 	{
-		sprintf(line_no_str, "%d", line_cnt);
-		_error_write("L");
-		_error_write(line_no_str);
-		_error_write(":d unknown instruction ");
-		_error_write(token);
-		_error_write("\n");
-		fclose(m_file);
-		free(content);
-		stack_freer(h);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_cnt, token);
+		all_free(m_file, content, h);
 		exit(EXIT_FAILURE);
 	}
 }

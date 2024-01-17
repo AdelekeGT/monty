@@ -9,10 +9,8 @@ void do_pint(stack_t **n_head, unsigned int line_number)
 {
 	if (*n_head == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
-		fclose(monty_object.m_file);
-		free(monty_object.file_content);
-		stack_freer(n_head);
+		do_print_error(1, line_number);
+		all_free(monty_object.m_file, monty_object.file_content, n_head);
 		exit(EXIT_FAILURE);
 	}
 

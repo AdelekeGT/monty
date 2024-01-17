@@ -8,7 +8,6 @@
 void do_push(stack_t **n_head, unsigned int line_number)
 {
 	int push_arg, i_i = 0, _k, not_int;
-	char line_no_str[10];
 
 	if (monty_object.argu != NULL)
 	{
@@ -23,13 +22,8 @@ void do_push(stack_t **n_head, unsigned int line_number)
 
 	if (monty_object.argu == NULL || not_int == 1)
 	{
-		sprintf(line_no_str, "%u", line_number);
-		_error_write("L");
-		_error_write(line_no_str);
-		_error_write(": usage: push integer\n");
-		fclose(monty_object.m_file);
-		free(monty_object.file_content);
-		stack_freer(n_head);
+		do_print_error(0, line_number);
+		all_free(monty_object.m_file, monty_object.file_content, n_head);
 		exit(EXIT_FAILURE);
 	}
 
