@@ -6,5 +6,5 @@
 */
 void _error_write(char *err_str)
 {
-	write(stderr, &err_str, sizeof(err_str) - 1);
+	write(STDERR_FILENO, &err_str, sizeof(err_str) - 1);
 }

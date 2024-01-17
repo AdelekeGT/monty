@@ -29,9 +29,7 @@ int main(int argc, char **argv)
 	monty_object.m_file = monty_file;
 	if (monty_file == NULL)
 	{
-		_error_write("Error: Can't open file ");
-		_error_write(argv[1]);
-		_error_write("\n");
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 

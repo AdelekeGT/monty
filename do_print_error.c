@@ -16,5 +16,5 @@ void do_print_error(int error_num, unsigned int line_num)
 	else if (error_num == 3)
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_num);
 	else if (error_num == 4)
-	`fprintf(stderr, "L%u: can't add, stack too short\n", line_num);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_num);
 }
