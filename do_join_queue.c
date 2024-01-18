@@ -26,12 +26,16 @@ void do_join_queue(stack_t **n_head, int data)
 		while (traverser->next != NULL)
 			traverser = traverser->next;
 
-		traverser->next = fresh_node;
-		fresh_node->prev = traverser;
 	}
-	else
+
+	if (traverser == NULL)
 	{
 		*n_head = fresh_node;
 		(*n_head)->prev = NULL;
+	}
+	else
+	{
+		traverser->next = fresh_node;
+		fresh_node->prev = traverser;
 	}
 }
