@@ -18,7 +18,7 @@ void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file)
 		{"nop", do_nop}, {"sub", do_minus}, {"div", do_division},
 		{"mul", do_multiply}, {"mod", do_modulus}, {"pchar", do_ascii_char},
 		{"pstr", do_str_print}, {"stack", do_almighty_stack},
-		{"queue", do_almighty_queue}, {NULL, NULL}
+		{"queue", do_almighty_queue}, {"rotl", do_rotl_whatever}, {NULL, NULL}
 	};
 
 	token = strtok(content, MONTY_DELIM);

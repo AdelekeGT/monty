@@ -100,4 +100,6 @@ void do_str_print(stack_t **n_head, unsigned int line_number);
 void do_almighty_stack(stack_t **n_head, unsigned int line_number);
 void do_almighty_queue(stack_t **n_head, unsigned int line_number);
 
+void do_rotl_whatever(stack_t **n_head, unsigned int line_number);
+
 #endif /* MONTY_H */
