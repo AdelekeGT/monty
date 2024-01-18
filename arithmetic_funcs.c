@@ -18,7 +18,7 @@ void do_minus(stack_t **n_head, unsigned int line_number)
 		helper = helper->next;
 	}
 
-	if (tracker < 2)
+	if (tracker <= 1)
 	{
 		do_print_error(5, line_number);
 		all_free(monty_object.m_file, monty_object.file_content, *n_head);
@@ -30,7 +30,7 @@ void do_minus(stack_t **n_head, unsigned int line_number)
 	difference = helper->next->n - helper->n;
 	helper->next->n = difference;
 	*n_head = helper->next;
-	do_pop(n_head, line_number);
+	free(helper);
 }
 
 /**
@@ -51,7 +51,7 @@ void do_division(stack_t **n_head, unsigned int line_number)
 		traverser = traverser->next;
 	}
 
-	if (stack_length < 2)
+	if (stack_length <= 1)
 	{
 		do_print_error(6, line_number);
 		all_free(monty_object.m_file, monty_object.file_content, *n_head);
@@ -70,7 +70,7 @@ void do_division(stack_t **n_head, unsigned int line_number)
 	division = traverser->next->n / traverser->n;
 	traverser->next->n = division;
 	*n_head = traverser->next;
-	do_pop(n_head, line_number);
+	free(traverser);
 }
 
 /**
