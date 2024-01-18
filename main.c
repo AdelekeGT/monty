@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 			do_instructions(file_content, &n_head, num_of_line, monty_file);
 
 		free(file_content);
+		file_content = NULL;
 	}
 
 	stack_freer(n_head);

@@ -27,13 +27,14 @@ void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file)
 
 	monty_object.argu = strtok(NULL, MONTY_DELIM);
 
-	while (token != NULL && struct_arr[iterator++].opcode != NULL)
+	while (token != NULL && struct_arr[iterator].opcode != NULL)
 	{
 		if (strcmp(struct_arr[iterator].opcode, token) == 0)
 		{
 			struct_arr[iterator].f(h, line_cnt);
 			return;
 		}
+		iterator++;
 	}
 
 	if (token != NULL && struct_arr[iterator].opcode == NULL)
