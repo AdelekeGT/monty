@@ -1,4 +1,4 @@
-
+#define _GNU_SOURCE
 #include "monty.h"
 
 MontyPack monty_object = INIT;

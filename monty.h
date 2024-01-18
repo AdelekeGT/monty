@@ -88,4 +88,7 @@ void do_swap(stack_t **n_head, unsigned int line_number);
 void do_add(stack_t **n_head, unsigned int line_number);
 void do_nop(stack_t **n_head, unsigned int line_number);
 
+/* arithmetic_funcs.c */
+void do_minus(stack_t **n_head, unsigned int line_number);
+
 #endif /* MONTY_H */
