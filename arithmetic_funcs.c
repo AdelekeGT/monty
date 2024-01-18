@@ -18,7 +18,7 @@ void do_minus(stack_t **n_head, unsigned int line_number)
 		helper = helper->next;
 	}
 
-	if (tracker <= 1)
+	if (tracker < 2)
 	{
 		do_print_error(5, line_number);
 		all_free(monty_object.m_file, monty_object.file_content, *n_head);
@@ -51,7 +51,7 @@ void do_division(stack_t **n_head, unsigned int line_number)
 		traverser = traverser->next;
 	}
 
-	if (stack_length <= 1)
+	if (stack_length < 2)
 	{
 		do_print_error(6, line_number);
 		all_free(monty_object.m_file, monty_object.file_content, *n_head);
