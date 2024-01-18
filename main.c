@@ -1,4 +1,4 @@
-#define _GNU_SOURCE
+
 #include "monty.h"
 
 MontyPack monty_object = INIT;
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 		free(file_content);
 	}
 
-	free(n_head);
+	stack_freer(n_head);
 	fclose(monty_file);
 
 	return (0);

@@ -6,7 +6,7 @@
  * @file_content: the contents of file
  * @the_stack: stack to be freed
 */
-void all_free(FILE *the_file, char *file_content, stack_t **the_stack)
+void all_free(FILE *the_file, char *file_content, stack_t *the_stack)
 {
 	fclose(the_file);
 	free(file_content);

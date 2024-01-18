@@ -67,7 +67,7 @@ typedef struct instruction_s
 int main(int argc, char **argv);
 void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file);
 void _error_write(char *err_str);
-void stack_freer(stack_t **h);
+void stack_freer(stack_t *h);
 char *makeshift_itoa(int integer);
 
 ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
@@ -83,7 +83,7 @@ void do_push(stack_t **n_head, unsigned int line_number);
 void do_pall(stack_t **n_head, unsigned int line_number);
 void do_pint(stack_t **n_head, unsigned int line_number);
 void do_pop(stack_t **n_head, unsigned int line_number);
-void all_free(FILE *the_file, char *file_content, stack_t **the_stack);
+void all_free(FILE *the_file, char *file_content, stack_t *the_stack);
 void do_swap(stack_t **n_head, unsigned int line_number);
 void do_add(stack_t **n_head, unsigned int line_number);
 void do_nop(stack_t **n_head, unsigned int line_number);

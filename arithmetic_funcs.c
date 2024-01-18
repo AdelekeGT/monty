@@ -21,7 +21,7 @@ void do_minus(stack_t **n_head, unsigned int line_number)
 	if (tracker <= 1)
 	{
 		do_print_error(5, line_number);
-		all_free(monty_object.m_file, monty_object.file_content, n_head);
+		all_free(monty_object.m_file, monty_object.file_content, *n_head);
 		exit(EXIT_FAILURE);
 	}
 

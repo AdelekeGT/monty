@@ -33,7 +33,7 @@ void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file)
 	if (token != NULL && struct_arr[iterator].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_cnt, token);
-		all_free(m_file, content, h);
+		all_free(m_file, content, *h);
 		exit(EXIT_FAILURE);
 	}
 }
