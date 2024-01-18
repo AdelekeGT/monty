@@ -70,7 +70,7 @@ void do_division(stack_t **n_head, unsigned int line_number)
 	division = traverser->next->n / traverser->n;
 	traverser->next->n = division;
 	*n_head = traverser->next;
-	free(traverser);
+	do_pop(n_head, line_number);
 }
 
 /**
@@ -104,7 +104,7 @@ void do_multiply(stack_t **n_head, unsigned int line_number)
 	multiply = traverser->next->n * traverser->n;
 	traverser->next->n = multiply;
 	*n_head = traverser->next;
-	free(traverser);
+	do_pop(n_head, line_number);
 }
 
 /**
@@ -145,5 +145,5 @@ void do_modulus(stack_t **n_head, unsigned int line_number)
 	the_remainder = traverser->next->n % traverser->n;
 	traverser->next->n = the_remainder;
 	*n_head = traverser->next;
-	free(traverser);
+	do_pop(n_head, line_number);
 }

@@ -12,7 +12,7 @@
 #define MONTY_DELIM "\n\t "
 #define CONTENT_SIZE 50
 #define BUFSIZE 1024
-#define INIT {NULL, NULL, 1, NULL}
+#define MONTY_INIT {NULL, NULL, 1, NULL}
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -63,7 +63,7 @@ typedef struct instruction_s
 
 
 /* FUNCTIONS */
-int main(int argc, char **argv);
+void do_get_content(FILE *monty_file, stack_t *n_head);
 void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file);
 void _error_write(char *err_str);
 void stack_freer(stack_t *h);

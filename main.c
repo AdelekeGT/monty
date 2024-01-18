@@ -1,7 +1,7 @@
 #define _GNU_SOURCE
 #include "monty.h"
 
-MontyPack monty_object = INIT;
+MontyPack monty_object = MONTY_INIT;
 
 /**
  * main - this is the main function
@@ -13,10 +13,6 @@ MontyPack monty_object = INIT;
 int main(int argc, char **argv)
 {
 	FILE *monty_file;
-	char *file_content = NULL;
-	size_t getline_size = 0;
-	ssize_t bytes_read = 1;
-	unsigned int num_of_line = 0;
 	stack_t *n_head = NULL;
 
 	if (argc != 2)
@@ -33,6 +29,26 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
+	do_get_content(monty_file, n_head);
+
+	stack_freer(n_head);
+	fclose(monty_file);
+
+	return (0);
+}
+
+/**
+ * do_get_content - get content from file opened with fopen()
+ * @monty_file: file
+ * @n_head: pointer pointing to the first node of list
+*/
+void do_get_content(FILE *monty_file, stack_t *n_head)
+{
+	char *file_content = NULL;
+	size_t getline_size = 0;
+	ssize_t bytes_read = 1;
+	unsigned int num_of_line = 0;
+
 	while (bytes_read > 0)
 	{
 		bytes_read = getline(&file_content, &getline_size, monty_file);
@@ -45,9 +61,4 @@ int main(int argc, char **argv)
 		free(file_content);
 		file_content = NULL;
 	}
-
-	stack_freer(n_head);
-	fclose(monty_file);
-
-	return (0);
 }
