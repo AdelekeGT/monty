@@ -25,6 +25,8 @@ void do_swap(stack_t **n_head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
+	swapper = *n_head;
+
 	makeshift = swapper->n;
 	swapper->n = swapper->next->n;
 	swapper->next->n = makeshift;

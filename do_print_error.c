@@ -19,4 +19,16 @@ void do_print_error(int error_num, unsigned int line_num)
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_num);
 	else if (error_num == 5)
 		fprintf(stderr, "L%u: can't sub, stack too short\n", line_num);
+	else if (error_num == 6)
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_num);
+	else if (error_num == 7)
+		fprintf(stderr, "L%u: division by zero\n", line_num);
+	else if (error_num == 8)
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_num);
+	else if (error_num == 9)
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_num);
+	else if (error_num == 10)
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_num);
+	else if (error_num == 11)
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_num);
 }

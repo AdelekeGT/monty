@@ -12,7 +12,7 @@
 #define MONTY_DELIM "\n\t "
 #define CONTENT_SIZE 50
 #define BUFSIZE 1024
-#define INIT {NULL, NULL, 0, NULL}
+#define INIT {NULL, NULL, 1, NULL}
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -62,7 +62,6 @@ typedef struct instruction_s
 } instruction_t;
 
 
-
 /* FUNCTIONS */
 int main(int argc, char **argv);
 void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file);
@@ -90,5 +89,15 @@ void do_nop(stack_t **n_head, unsigned int line_number);
 
 /* arithmetic_funcs.c */
 void do_minus(stack_t **n_head, unsigned int line_number);
+void do_division(stack_t **n_head, unsigned int line_number);
+void do_multiply(stack_t **n_head, unsigned int line_number);
+void do_modulus(stack_t **n_head, unsigned int line_number);
+
+void do_ascii_char(stack_t **n_head, unsigned int line_number);
+void do_str_print(stack_t **n_head, unsigned int line_number);
+
+/* stack_queue_op.c */
+void do_almighty_stack(stack_t **n_head, unsigned int line_number);
+void do_almighty_queue(stack_t **n_head, unsigned int line_number);
 
 #endif /* MONTY_H */

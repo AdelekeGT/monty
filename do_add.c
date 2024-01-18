@@ -25,6 +25,8 @@ void do_add(stack_t **n_head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
+	pointer = *n_head;
+
 	makeshift = pointer->n + pointer->next->n;
 	pointer->next->n = makeshift;
 	do_pop(n_head, line_number);
