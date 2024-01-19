@@ -7,7 +7,9 @@
 */
 void do_print_error(int error_num, unsigned int line_num)
 {
-	if (error_num == 0)
+	if (error_num == -1)
+		fprintf(stderr, "USAGE: monty file\n");
+	else if (error_num == 0)
 		fprintf(stderr, "L%u: usage: push integer\n", line_num);
 	else if (error_num == 1)
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_num);

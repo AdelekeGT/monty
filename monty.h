@@ -63,6 +63,7 @@ typedef struct instruction_s
 
 
 /* FUNCTIONS */
+void do_process_file(char *arg);
 void do_get_content(FILE *monty_file, stack_t *n_head);
 void do_instructions(char *content, stack_t **h, int line_cnt, FILE *m_file);
 void _error_write(char *err_str);

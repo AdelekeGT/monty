@@ -9,6 +9,7 @@ void do_rotl_whatever(stack_t **n_head, unsigned int line_number)
 {
 	stack_t *traverser;
 
+	(void)line_number;
 	traverser = *n_head;
 
 	while (traverser != NULL)
